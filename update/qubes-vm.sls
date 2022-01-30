@@ -29,7 +29,9 @@ dnf-makecache:
 Disable deltarpm:
   file.append:
     - name: /etc/dnf/dnf.conf
-    - text: deltarpm=False
+    - text: |
+        deltarpm=False
+        zchunk=False
 {% endif %}
 
 {% if grains['oscodename'] == 'buster' %}
